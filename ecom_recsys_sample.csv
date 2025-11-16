@@ -1,0 +1,21 @@
+interaction_id,user_id,product_id,product_name,category,price,event_type,quantity,rating,timestamp,session_id
+I1000,user_1,P001,Wireless Earbuds,Electronics,1299,view,0,,2025-11-06 23:47:00,session_1453
+I1001,user_1,P008,LED Desk Lamp,Home Decor,899,cart,2,,2025-11-10 03:17:00,session_1372
+I1002,user_3,P009,Gaming Mouse,Electronics,1599,view,0,,2025-11-12 09:14:00,session_1875
+I1003,user_4,P004,Smartphone Case,Accessories,499,purchase,1,4,2025-11-12 04:52:00,session_1678
+I1004,user_6,P006,Bluetooth Speaker,Electronics,1999,view,0,,2025-11-06 08:11:00,session_1901
+I1005,user_4,P001,Wireless Earbuds,Electronics,1299,view,0,,2025-11-11 01:06:00,session_1733
+I1006,user_2,P007,Denim Jacket,Apparel,2999,purchase,3,5,2025-11-13 05:33:00,session_1874
+I1007,user_2,P003,Coffee Maker,Home Appliances,3499,cart,2,,2025-11-09 02:44:00,session_1532
+I1008,user_8,P010,Water Bottle,Accessories,399,view,0,,2025-11-09 01:23:00,session_1771
+I1009,user_6,P001,Wireless Earbuds,Electronics,1299,purchase,1,,2025-11-14 14:09:00,session_1768
+I1010,user_7,P009,Gaming Mouse,Electronics,1599,view,0,,2025-11-08 23:38:00,session_1319
+I1011,user_8,P096,Bluetooth Speaker,Electronics,1999,cart,1,,2025-11-12 22:20:00,session_1610
+I1012,user_5,P002,Running Shoes,Footwear,2499,view,0,,2025-11-07 17:03:00,session_1762
+I1013,user_3,P008,LED Desk Lamp,Home Decor,899,view,0,,2025-11-12 07:44:00,session_1609
+I1014,user_8,P004,Smartphone Case,Accessories,499,view,0,,2025-11-09 17:21:00,session_1653
+I1015,user_6,P003,Coffee Maker,Home Appliances,3499,cart,1,,2025-11-07 06:19:00,session_1221
+I1016,user_7,P005,Yoga Mat,Fitness,799,purchase,2,3,2025-11-11 18:51:00,session_1788
+I1017,user_4,P006,Bluetooth Speaker,Electronics,1999,view,0,,2025-11-13 13:40:00,session_1903
+I1018,user_3,P007,Denim Jacket,Apparel,2999,view,0,,2025-11-14 10:12:00,session_1076
+I1019,user_5,P002,Running Shoes,Footwear,2499,purchase,1,,2025-11-06 11:35:00,session_1993

@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/HP/Desktop/Nov_project/ecommerce_project/mlruns/359892774720823911/b3e6098b40e9430f8537a9433e76ecb4/artifacts
+end_time: 1763287581796
+entry_point_name: ''
+experiment_id: '359892774720823911'
+lifecycle_stage: active
+run_id: b3e6098b40e9430f8537a9433e76ecb4
+run_name: learned-skink-241
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1763287567111
+status: 3
+tags: []
+user_id: HP

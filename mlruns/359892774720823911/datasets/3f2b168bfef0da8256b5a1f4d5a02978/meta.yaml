@@ -1,0 +1,14 @@
+digest: '36474608'
+name: dataset
+profile: '{"num_rows": 6, "num_elements": 66}'
+schema: '{"mlflow_colspec": [{"type": "double", "name": "P001", "required": true},
+  {"type": "double", "name": "P002", "required": true}, {"type": "double", "name":
+  "P003", "required": true}, {"type": "double", "name": "P004", "required": true},
+  {"type": "double", "name": "P005", "required": true}, {"type": "double", "name":
+  "P006", "required": true}, {"type": "double", "name": "P007", "required": true},
+  {"type": "double", "name": "P008", "required": true}, {"type": "double", "name":
+  "P009", "required": true}, {"type": "double", "name": "P010", "required": true},
+  {"type": "double", "name": "P096", "required": true}]}'
+source: '{"tags": {"mlflow.user": "HP", "mlflow.source.name": "src/train.py", "mlflow.source.type":
+  "LOCAL"}}'
+source_type: code

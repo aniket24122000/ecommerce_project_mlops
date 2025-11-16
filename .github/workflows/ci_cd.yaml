@@ -1,0 +1,69 @@
+name: Local DVC + FastAPI CI/CD 🚀
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-train-docker:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # Step 1️⃣: Checkout project
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Step 2️⃣: Setup Python
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      # Step 3️⃣: Install dependencies
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install dvc
+
+      # Step 4️⃣: Restore DVC cache (pull artifacts)
+      - name: Restore DVC cached artifacts
+        run: |
+          if [ -f dvc.yaml ]; then
+            echo "🔄 Restoring DVC cache..."
+            dvc pull || echo "⚠️ No DVC remote configured. Using local cache only."
+          else
+            echo "⚠️ dvc.yaml not found — skipping DVC pull"
+          fi
+          echo "📁 Checking artifacts..."
+          ls -R data/ || echo "⚠️ No data found"
+
+      # Step 5️⃣: Run DVC pipeline (optional)
+      - name: Run DVC Pipeline (Optional)
+        run: |
+          if [ -f dvc.yaml ]; then
+            echo "🚀 Running DVC Pipeline..."
+            dvc repro || echo "ℹ️ No stage needed"
+          fi
+
+      # Step 6️⃣: Login to DockerHub
+      - name: Docker Login
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      # Step 7️⃣: Build Docker Image for FastAPI
+      - name: Build FastAPI Docker Image
+        run: |
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/ecommerce-reco-api:latest .
+
+      # Step 8️⃣: Push Docker Image
+      - name: Push Docker Image
+        run: |
+          docker push ${{ secrets.DOCKER_USERNAME }}/ecommerce-reco-api:latest

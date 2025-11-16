@@ -1,0 +1,41 @@
+stages:
+  ingest:
+    cmd: python src/data_ingest.py
+    deps:
+      - ecom_recsys_sample.csv
+      - src/data_ingest.py
+    outs:
+      - data/raw/data.csv
+
+  preprocess:
+    cmd: python src/preprocess.py
+    deps:
+      - data/raw/data.csv
+      - src/preprocess.py
+    outs:
+      - data/processed/data_processed.csv
+
+  features:
+    cmd: python src/feature_engineering.py
+    deps:
+      - data/processed/data_processed.csv
+      - src/feature_engineering.py
+    outs:
+      - data/features/features.csv
+
+  train:
+    cmd: python src/train.py
+    deps:
+      - data/features/features.csv
+      - src/train.py
+      - params.yaml
+    outs:
+      - models/model.pkl
+
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+      - models/model.pkl
+      - src/evaluate.py
+    outs:
+      - metrics/metrics.json

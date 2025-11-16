@@ -1,0 +1,9 @@
+data:
+  raw: data/raw/data.csv
+  processed: data/processed/data_processed.csv
+  features: data/features/features.csv
+
+train:
+  n_components: 5
+  test_size: 0.2
+  random_state: 42
